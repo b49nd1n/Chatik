@@ -21,7 +21,7 @@ def send_mess():
 
 works=True
 sock = socket.socket()
-sock.connect(('95.165.172.150',11111))
+sock.connect(('null',11111))
 print("Введите имя")
 name = input()
 sock.send(("login\0").encode())
@@ -35,6 +35,7 @@ while works:
 	str_ = input()
 	if str_=="0":
 		works=False
+		sock.close()
 	if str_=="1":
 		get_5()
 	if str_=="2":
